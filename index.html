@@ -41,6 +41,42 @@
             opacity: 0;
             animation: fadeInUp 1s ease-out 2s forwards;
         }
+        .code-animation {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.2rem;
+            color: #dfe6e9;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #d4a017;
+            animation: typingCode 8s steps(60, end) infinite, blinkCursor 0.75s step-end infinite;
+        }
+        @keyframes typingCode {
+            0% { width: 0; }
+            50% { width: 100%; }
+            100% { width: 0; }
+        }
+        @keyframes blinkCursor {
+            50% { border-right-color: transparent; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            50% { border-right-color: transparent; }
+        }
         nav {
             background-color: #ffffff;
             padding: 1rem;
@@ -238,6 +274,9 @@
     <header>
         <h1>Gabriel André Montenegro de Castro</h1>
         <p>Analista de TI | Programador | Especialista em Redes</p>
+        <div class="code-animation">
+            // Bem-vindo ao meu currículo!
+        </div>
     </header>
 
     <!-- Navegação -->
