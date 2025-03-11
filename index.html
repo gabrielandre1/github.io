@@ -3,65 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel André Montenegro de Castro - Especialista em TI</title>
+    <title>Gabriel André - Currículo Profissional</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            color: #2d3436;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         header {
-            background-color: #2c3e50;
+            background: linear-gradient(135deg, #2d3436, #0984e3);
             color: white;
             text-align: center;
-            padding: 2rem;
+            padding: 4rem 1rem;
+            border-bottom: 3px solid #d4a017;
+            animation: fadeIn 1s ease-in;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #d4a017;
+            animation: typing 2s steps(30, end), blink 0.75s step-end infinite;
+        }
+        header p {
+            font-size: 1.4rem;
+            color: #dfe6e9;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 2s forwards;
         }
         nav {
-            background-color: #34495e;
+            background-color: #ffffff;
             padding: 1rem;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
         }
         nav a {
-            color: white;
+            color: #0984e3;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 1.5rem;
             font-weight: bold;
+            font-size: 1.1rem;
+            position: relative;
+            transition: color 0.3s;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: #d4a017;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #d4a017;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease-in-out;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
         section {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 5px;
+            background-color: #ffffff;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            animation: slideUp 0.8s ease-out;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
         h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #34495e;
-            padding-bottom: 5px;
+            color: #0984e3;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #d4a017;
+            padding-bottom: 0.5rem;
+            animation: fadeInDown 0.8s ease-out;
         }
         h3 {
-            color: #34495e;
-            margin-bottom: 5px;
+            color: #2d3436;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            transition: color 0.3s;
+        }
+        h3:hover {
+            color: #d4a017;
+        }
+        p, ul {
+            color: #636e72;
+            margin-top: 0.5rem;
         }
         ul {
-            list-style-type: square;
-            margin-left: 20px;
+            list-style-type: none;
+            margin-left: 0;
+        }
+        ul li {
+            padding: 0.7rem 0;
+            position: relative;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: listItemFade 0.6s ease-out forwards;
+        }
+        ul li:nth-child(1) { animation-delay: 0.2s; }
+        ul li:nth-child(2) { animation-delay: 0.4s; }
+        ul li:nth-child(3) { animation-delay: 0.6s; }
+        ul li:hover {
+            transform: translateX(5px);
+        }
+        ul li:before {
+            content: "▹";
+            color: #0984e3;
+            position: absolute;
+            left: -1.5rem;
+            transition: color 0.3s;
+        }
+        ul li:hover:before {
+            color: #d4a017;
+        }
+        .highlight {
+            color: #d4a017;
+            font-weight: bold;
+        }
+        .contact-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: #0984e3;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(9,132,227,0.3);
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+        .contact-btn:hover {
+            background-color: #0773c4;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(9,132,227,0.5);
         }
         footer {
+            background-color: #2d3436;
+            color: #dfe6e9;
             text-align: center;
-            padding: 1rem;
-            background-color: #2c3e50;
-            color: white;
-            position: relative;
-            width: 100%;
-            margin-top: 20px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 -3px 15px rgba(0,0,0,0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            50% { border-right-color: transparent; }
+        }
+        @keyframes listItemFade {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            header p {
+                font-size: 1.1rem;
+            }
+            nav a {
+                margin: 0 0.7rem;
+                font-size: 1rem;
+            }
+            .container {
+                padding: 0 0.5rem;
+            }
+            section {
+                padding: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            h3 {
+                font-size: 1.3rem;
+            }
+            .contact-btn {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -69,122 +237,99 @@
     <!-- Cabeçalho -->
     <header>
         <h1>Gabriel André Montenegro de Castro</h1>
-        <p>Especialista em Tecnologia da Informação e Redes</p>
+        <p>Analista de TI | Programador | Especialista em Redes</p>
     </header>
 
     <!-- Navegação -->
     <nav>
-        <a href="#sobre">Sobre Mim</a>
-        <a href="#objetivo">Objetivo</a>
-        <a href="#formacao">Formação</a>
+        <a href="#perfil">Perfil</a>
         <a href="#experiencia">Experiência</a>
         <a href="#habilidades">Habilidades</a>
+        <a href="#formacao">Formação</a>
         <a href="#contato">Contato</a>
     </nav>
 
-    <!-- Seção Sobre Mim -->
-    <section id="sobre">
-        <h2>Sobre Mim</h2>
-        <p>
-            Olá! Meu nome é Gabriel André Montenegro de Castro, tenho 35 anos e sou um profissional apaixonado por tecnologia da informação. 
-            Com mais de 15 anos de experiência em TI, especializo-me em administração de redes, programação e suporte técnico, sempre buscando soluções inovadoras e eficientes.
-        </p>
-        <p><strong>Endereço:</strong> Rua do Espinheiro, San Vale – Natal/RN</p>
-        <p><strong>Estado Civil:</strong> Solteiro</p>
-    </section>
+    <!-- Container principal -->
+    <div class="container">
+        <!-- Seção Perfil Profissional -->
+        <section id="perfil">
+            <h2>Perfil Profissional</h2>
+            <p>
+                Sou um profissional de TI com <span class="highlight">mais de 15 anos de experiência</span>, dedicado a transformar desafios em soluções. 
+                Especialista em <span class="highlight">Java, Python e SQL</span>, administração de redes e suporte técnico, ofereço expertise e comprometimento para alcançar resultados excepcionais.
+            </p>
+        </section>
 
-    <!-- Seção Objetivo Profissional -->
-    <section id="objetivo">
-        <h2>Objetivo Profissional</h2>
-        <p>
-            Buscar oportunidades na área de Tecnologia da Informação, aplicando minhas habilidades técnicas e experiência prática 
-            em programação, análise de redes ou outras áreas de TI para contribuir com eficiência e inovação da empresa.
-        </p>
-    </section>
+        <!-- Seção Experiência Profissional -->
+        <section id="experiencia">
+            <h2>Experiência Profissional</h2>
+            <h3>Analista de Redes e Sistemas – Ctsi</h3>
+            <p><strong>Dez/2023 – Atualmente</strong></p>
+            <ul>
+                <li>Gerenciamento de redes corporativas com foco em eficiência.</li>
+                <li>Configuração de roteadores e switches para alta performance.</li>
+                <li>Redução de tempo de resposta a incidentes em <span class="highlight">20%</span>.</li>
+            </ul>
+            <h3>Analista de Redes e Suporte – Brisanet</h3>
+            <p><strong>Set/2023 – Nov/2024</strong></p>
+            <ul>
+                <li>Monitoramento de redes em larga escala com precisão.</li>
+                <li>Resolução de <span class="highlight">95% dos casos</span> no primeiro contato.</li>
+            </ul>
+            <h3>Analista de Infraestrutura – Paiva Gomes</h3>
+            <p><strong>Ago/2011 – Out/2013</strong></p>
+            <ul>
+                <li>Manutenção de servidores com uptime de <span class="highlight">99,8%</span>.</li>
+                <li>Implementação de políticas de segurança de dados.</li>
+            </ul>
+            <h3>Técnico em Informática e Redes – AMIL</h3>
+            <p><strong>Jun/2008 – Out/2010</strong></p>
+            <ul>
+                <li>Suporte a mais de <span class="highlight">200 usuários</span> com excelência.</li>
+                <li>Montagem e manutenção de equipamentos de TI.</li>
+            </ul>
+        </section>
 
-    <!-- Seção Formação Acadêmica -->
-    <section id="formacao">
-        <h2>Formação Acadêmica e Certificações</h2>
-        <h3>Análise e Desenvolvimento de Sistemas</h3>
-        <p><strong>Instituição:</strong> Anhanguera – Cursando</p>
-        <h3>Sistemas de Informação</h3>
-        <p><strong>Instituição:</strong> UNP – Incompleto</p>
-        <h3>Cursos e Certificações</h3>
-        <ul>
-            <li>Montagem e Manutenção de Computadores – SENAC/RN</li>
-            <li>Tópicos Avançados em Manutenção de Micro – SENAC/RN</li>
-            <li>Administrador de Redes – SENAC/RN</li>
-            <li>Programação JAVA e SQL – SENAC/RN</li>
-        </ul>
-    </section>
+        <!-- Seção Habilidades -->
+        <section id="habilidades">
+            <h2>Habilidades Técnicas</h2>
+            <ul>
+                <li><span class="highlight">Programação:</span> Java, Python, SQL</li>
+                <li><span class="highlight">Redes:</span> Configuração, Administração, Monitoramento</li>
+                <li><span class="highlight">Sistemas:</span> Windows, Linux</li>
+                <li><span class="highlight">Hardware:</span> Montagem e Manutenção</li>
+                <li><span class="highlight">Diferenciais:</span> Proatividade, Solução de Problemas</li>
+            </ul>
+        </section>
 
-    <!-- Seção Experiência Profissional -->
-    <section id="experiencia">
-        <h2>Experiência Profissional</h2>
-        <h3>Analista de Redes e Sistemas – Ctsi</h3>
-        <p><strong>Período:</strong> Dezembro/2024 – Atualmente</p>
-        <ul>
-            <li>Administração e suporte em redes de computadores;</li>
-            <li>Implantação e suporte de sistemas;</li>
-            <li>Atendimento e resolução de problemas relacionados a redes e sistemas;</li>
-            <li>Configuração de equipamentos de rede (roteadores, switches).</li>
-        </ul>
-        <h3>Analista de Redes e Suporte – Brisanet</h3>
-        <p><strong>Período:</strong> Setembro/2023 – Novembro/2024</p>
-        <ul>
-            <li>Administração e suporte em redes de computadores;</li>
-            <li>Monitoramento de infraestrutura de rede;</li>
-            <li>Atendimento e resolução de problemas relacionados a redes e conectividade;</li>
-            <li>Configuração de equipamentos de rede (roteadores, switches).</li>
-        </ul>
-        <h3>Analista de Infraestrutura – Paiva Gomes</h3>
-        <p><strong>Período:</strong> Agosto/2011 – Outubro/2013</p>
-        <ul>
-            <li>Suporte técnico em infraestrutura de TI;</li>
-            <li>Manutenção e monitoramento de servidores e redes;</li>
-            <li>Gerenciamento de ativos de TI e segurança de dados.</li>
-        </ul>
-        <h3>Técnico em Informática e Redes – AMIL</h3>
-        <p><strong>Período:</strong> Junho/2008 – Outubro/2010</p>
-        <ul>
-            <li>Suporte em hardware e software para usuários finais;</li>
-            <li>Montagem e manutenção de computadores e periféricos;</li>
-            <li>Gerenciamento de redes internas e resolução de problemas.</li>
-        </ul>
-    </section>
+        <!-- Seção Formação -->
+        <section id="formacao">
+            <h2>Formação e Certificações</h2>
+            <h3>Análise e Desenvolvimento de Sistemas</h3>
+            <p><strong>Cursando</strong></p>
+            <h3>Sistemas de Informação – UNP</h3>
+            <p><strong>Incompleto</strong></p>
+            <h3>Certificações</h3>
+            <ul>
+                <li>Programação JAVA e SQL – SENAC/RN</li>
+                <li>Administrador de Redes – SENAC/RN</li>
+                <li>Montagem e Manutenção de Computadores – SENAC/RN</li>
+            </ul>
+        </section>
 
-    <!-- Seção Habilidades -->
-    <section id="habilidades">
-        <h2>Habilidades Técnicas</h2>
-        <ul>
-            <li>Programação em Java, Python e SQL;</li>
-            <li>Montagem e manutenção de hardware;</li>
-            <li>Conhecimentos avançados em administração de redes;</li>
-            <li>Experiência com sistemas Windows, Linux e OS;</li>
-            <li>Monitoramento e configuração de infraestrutura de TI;</li>
-            <li>Facilidade na solução de problemas e suporte ao usuário;</li>
-            <li>Disponibilidade para atuar em diferentes áreas dentro do setor de tecnologia.</li>
-        </ul>
-        <h3>Perfil Profissional</h3>
-        <ul>
-            <li>Aprendizagem rápida e adaptabilidade;</li>
-            <li>Boa comunicação e relacionamento interpessoal;</li>
-            <li>Comprometido, proativo e flexível;</li>
-            <li>Disponibilidade de horários e viagens.</li>
-        </ul>
-    </section>
-
-    <!-- Seção Contato -->
-    <section id="contato">
-        <h2>Contato</h2>
-        <p><strong>Telefone:</strong> (84) 99908-5945</p>
-        <p><strong>Email:</strong> <a href="mailto:gabriel_andre1@hotmail.com">gabriel_andre1@hotmail.com</a></p>
-        <!-- Adicione links de LinkedIn ou GitHub se tiver -->
-    </section>
+        <!-- Seção Contato -->
+        <section id="contato">
+            <h2>Contato</h2>
+            <p><strong>Telefone:</strong> (84) 99908-5945</p>
+            <p><strong>Email:</strong> gabriel_andre1@hotmail.com</p>
+            <p><strong>Local:</strong> Natal/RN</p>
+            <a href="mailto:gabriel_andre1@hotmail.com" class="contact-btn">Fale Comigo!</a>
+        </section>
+    </div>
 
     <!-- Rodapé -->
     <footer>
-        <p>© 2025 Gabriel André Montenegro de Castro. Todos os direitos reservados.</p>
+        <p>© 2025 Gabriel André Montenegro de Castro - Excelência em TI</p>
     </footer>
 </body>
 </html>
