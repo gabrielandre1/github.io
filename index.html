@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel André - Currículo Profissional</title>
+    <title>Gabriel André - Portfólio Profissional</title>
     <style>
         * {
             margin: 0;
@@ -11,371 +11,181 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #f4f6f9;
             color: #2d3436;
-            line-height: 1.6;
-            overflow-x: hidden;
         }
         header {
             background: linear-gradient(135deg, #2d3436, #0984e3);
             color: white;
             text-align: center;
-            padding: 4rem 1rem;
-            border-bottom: 3px solid #d4a017;
-            animation: fadeIn 1s ease-in;
+            padding: 3rem 1rem;
         }
         header h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 3px solid #d4a017;
-            animation: typing 2s steps(30, end), blink 0.75s step-end infinite;
+            font-size: 2.5rem;
         }
         header p {
-            font-size: 1.4rem;
-            color: #dfe6e9;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 2s forwards;
-        }
-        .code-animation {
-            font-family: 'Courier New', Courier, monospace;
             font-size: 1.2rem;
-            color: #dfe6e9;
-            background-color: rgba(0, 0, 0, 0.3);
-            padding: 1rem;
-            border-radius: 5px;
-            margin-top: 1rem;
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 2px solid #d4a017;
-            animation: typingCode 8s steps(60, end) infinite, blinkCursor 0.75s step-end infinite;
-        }
-        @keyframes typingCode {
-            0% { width: 0; }
-            50% { width: 100%; }
-            100% { width: 0; }
-        }
-        @keyframes blinkCursor {
-            50% { border-right-color: transparent; }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        @keyframes blink {
-            50% { border-right-color: transparent; }
+            margin-top: 0.5rem;
         }
         nav {
-            background-color: #ffffff;
-            padding: 1rem;
+            background: #fff;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         nav a {
-            color: #0984e3;
+            margin: 0 1rem;
             text-decoration: none;
-            margin: 0 1.5rem;
+            color: #0984e3;
             font-weight: bold;
-            font-size: 1.1rem;
-            position: relative;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #d4a017;
-        }
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: #d4a017;
-            left: 0;
-            bottom: -5px;
-            transition: width 0.3s ease-in-out;
-        }
-        nav a:hover::after {
-            width: 100%;
         }
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 2rem auto;
-            padding: 0 1rem;
+            padding: 1rem;
         }
         section {
-            background-color: #ffffff;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            animation: slideUp 0.8s ease-out;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            background: #fff;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         }
         h2 {
             color: #0984e3;
-            font-size: 2rem;
             margin-bottom: 1rem;
-            border-bottom: 2px solid #d4a017;
-            padding-bottom: 0.5rem;
-            animation: fadeInDown 0.8s ease-out;
-        }
-        h3 {
-            color: #2d3436;
-            font-size: 1.5rem;
-            margin-top: 1.5rem;
-            transition: color 0.3s;
-        }
-        h3:hover {
-            color: #d4a017;
-        }
-        p, ul {
-            color: #636e72;
-            margin-top: 0.5rem;
         }
         ul {
-            list-style-type: none;
-            margin-left: 0;
+            list-style: none;
         }
         ul li {
-            padding: 0.7rem 0;
-            position: relative;
-            opacity: 0;
-            transform: translateX(-30px);
-            animation: listItemFade 0.6s ease-out forwards;
-        }
-        ul li:nth-child(1) { animation-delay: 0.2s; }
-        ul li:nth-child(2) { animation-delay: 0.4s; }
-        ul li:nth-child(3) { animation-delay: 0.6s; }
-        ul li:hover {
-            transform: translateX(5px);
-        }
-        ul li:before {
-            content: "▹";
-            color: #0984e3;
-            position: absolute;
-            left: -1.5rem;
-            transition: color 0.3s;
-        }
-        ul li:hover:before {
-            color: #d4a017;
+            margin: 0.5rem 0;
         }
         .highlight {
             color: #d4a017;
             font-weight: bold;
         }
-        .contact-btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background-color: #0984e3;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 1rem;
-            font-weight: bold;
-            box-shadow: 0 4px 12px rgba(9,132,227,0.3);
-            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-        }
-        .contact-btn:hover {
-            background-color: #0773c4;
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(9,132,227,0.5);
-        }
         footer {
-            background-color: #2d3436;
-            color: #dfe6e9;
             text-align: center;
-            padding: 1.5rem;
-            margin-top: 2rem;
-            box-shadow: 0 -3px 15px rgba(0,0,0,0.1);
-            animation: fadeInUp 1s ease-out;
-        }
-
-        /* Animações */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        @keyframes blink {
-            50% { border-right-color: transparent; }
-        }
-        @keyframes listItemFade {
-            from { opacity: 0; transform: translateX(-30px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            header p {
-                font-size: 1.1rem;
-            }
-            nav a {
-                margin: 0 0.7rem;
-                font-size: 1rem;
-            }
-            .container {
-                padding: 0 0.5rem;
-            }
-            section {
-                padding: 1.5rem;
-                margin-bottom: 1rem;
-            }
-            h2 {
-                font-size: 1.6rem;
-            }
-            h3 {
-                font-size: 1.3rem;
-            }
-            .contact-btn {
-                width: 100%;
-                text-align: center;
-            }
+            padding: 1rem;
+            background: #2d3436;
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header>
-        <h1>Gabriel André Montenegro de Castro</h1>
-        <p>Analista de Sistemas | Programador | Especialista em Redes</p>
-        <div class="code-animation">
-            // Bem-vindo ao meu currículo!
-        </div>
-    </header>
 
-    <!-- Navegação -->
-    <nav>
-        <a href="#perfil">Perfil</a>
-        <a href="#experiencia">Experiência</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#formacao">Formação</a>
-        <a href="#contato">Contato</a>
-    </nav>
+<header>
+    <h1>Gabriel André Montenegro de Castro</h1>
+    <p>Analista de Suporte Técnico | Redes | Linux | Python | PostgreSQL</p>
+</header>
 
-    <!-- Container principal -->
-    <div class="container">
-        <!-- Seção Perfil Profissional -->
-        <section id="perfil">
-            <h2>Perfil Profissional</h2>
-            <p>
-                Sou um profissional de TI com <span class="highlight">mais de 15 anos de experiência</span>, dedicado a transformar desafios em soluções. 
-                Especialista em <span class="highlight">Java, Python e SQL</span>, administração de redes e suporte técnico, ofereço expertise e comprometimento para alcançar resultados excepcionais.
-            </p>
-        </section>
+<nav>
+    <a href="#perfil">Perfil</a>
+    <a href="#experiencia">Experiência</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#formacao">Formação</a>
+    <a href="#contato">Contato</a>
+</nav>
 
-        <!-- Seção Experiência Profissional -->
-        <section id="experiencia">
-            <h2>Experiência Profissional</h2>
-           <h3>Analista de Sistemas – CTSI</h3>
-           <p><strong>Dez/2023 – Atualmente</strong></p>
-           <ul>
-                <li>Suporte a sistema ERP com foco em eficiência operacional.</li>
-                <li>Implantação e suporte a sistemas PDV.</li>
-                <li>Administração de banco de dados SQL.</li>
-                <li>Suporte técnico a clientes, garantindo alta satisfação.</li>
-                <li>Redução de <span class="highlight">20%</span> no tempo de resposta a incidentes.</li>
-            </ul>
-            <h3>Técnico de Redes e infraestrutura – Brisanet</h3>
-            <p><strong>Set/2023 – Nov/2024</strong></p>
-            <ul>
-                <li>Monitoramento de redes em larga escala com precisão.</li>
-                <li>Manutenção e configuração de equipamentos de rede.</li>
-                <li>Motagem de redes.</li>
-                <li>Resolução de <span class="highlight">95% dos casos</span> no primeiro contato.</li>
-            </ul>
-            <h3>Técnico de Infraestrutura – Paiva Gomes</h3>
-            <p><strong>Ago/2011 – Out/2013</strong></p>
-            <ul>
-                <li>Manutenção de servidores com uptime de <span class="highlight">99,8%</span>.</li>
-                <li>Manutenção de computadores e servidores.</li>
-                <li>Suporte a sistemas de Gestão.</li>
-                <li>Implementação de políticas de segurança de dados.</li>
-            </ul>
-            <h3>Técnico em Informática e Redes – AMIL</h3>
-            <p><strong>Jun/2008 – Out/2010</strong></p>
-            <ul>
-                <li>Suporte a mais de <span class="highlight">200 usuários</span> com excelência.</li>
-                <li>Montagem e manutenção de equipamentos de TI.</li>
-                <li>Manutenção de computadores e servidores.</li>
-            </ul>
-        </section>
+<div class="container">
 
-        <!-- Seção Habilidades -->
-        <section id="habilidades">
-            <h2>Habilidades Técnicas</h2>
-            <ul>
-                <li><span class="highlight">Programação:</span> Java, Python, SQL</li>
-                <li><span class="highlight">Redes:</span> Configuração, Administração, Monitoramento</li>
-                <li><span class="highlight">Sistemas:</span> Windows, Linux</li>
-                <li><span class="highlight">Hardware:</span> Montagem e Manutenção</li>
-                <li><span class="highlight">Diferenciais:</span> Proatividade, Solução de Problemas</li>
-            </ul>
-        </section>
+    <!-- Perfil -->
+    <section id="perfil">
+        <h2>Perfil Profissional</h2>
+        <p>
+            Profissional de TI com experiência em <span class="highlight">redes, sistemas e suporte técnico avançado</span>, 
+            atuando em ambientes de provedores de internet. Possuo conhecimento em 
+            <span class="highlight">Linux, automação com Python, banco de dados PostgreSQL e troubleshooting de redes</span>. 
+            Focado em resolução de problemas, alta disponibilidade e melhoria contínua de processos.
+        </p>
+    </section>
 
-        <!-- Seção Formação -->
-        <section id="formacao">
-            <h2>Formação e Certificações</h2>
-            <h3>Análise e Desenvolvimento de Sistemas</h3>
-            <p><strong>Cursando</strong></p>
-            <h3>Sistemas de Informação – UNP</h3>
-            <p><strong>Incompleto</strong></p>
-            <h3>Cursos</h3>
-            <ul>
-                <li>Programação JAVA e SQL – SENAC/RN</li>
-                <li>Administrador de Redes – SENAC/RN</li>
-                <li>Montagem e Manutenção de Computadores – SENAC/RN</li>
-            </ul>
-        </section>
+    <!-- Experiência -->
+    <section id="experiencia">
+        <h2>Experiência Profissional</h2>
 
-        <!-- Seção Contato -->
-        <section id="contato">
-            <h2>Contato</h2>
-            <p><strong>Telefone:</strong> (84) 99908-5945</p>
-            <p><strong>Email:</strong> gabriel_andre1@hotmail.com</p>
-            <p><strong>Local:</strong> Natal/RN</p>
-            <a href="mailto:gabriel_andre1@hotmail.com" class="contact-btn">Fale Comigo!</a>
-        </section>
-    </div>
+        <h3>Analista de Suporte Técnico – TSMX</h3>
+        <p><strong>Jun/2025 – Atualmente</strong></p>
+        <ul>
+            <li>Suporte técnico especializado em redes e sistemas para provedores.</li>
+            <li>Monitoramento e troubleshooting (PPPoE, DHCP, NAT, VPN).</li>
+            <li>Configuração de roteadores, switches, OLTs e concentradores.</li>
+            <li>Administração básica de servidores Linux (logs, serviços).</li>
+            <li>Automação de tarefas com scripts em Python.</li>
+            <li>Consultas e análise em banco PostgreSQL.</li>
+            <li>Análise de logs e falhas de autenticação/accounting.</li>
+            <li>Integração com equipamentos Huawei, Cisco e MikroTik.</li>
+        </ul>
 
-    <!-- Rodapé -->
-    <footer>
-        <p>© 2025 Gabriel André Montenegro de Castro - Excelência em TI</p>
-    </footer>
+        <h3>Analista de Sistemas – CTSI</h3>
+        <p><strong>Dez/2023 – Atualmente</strong></p>
+        <ul>
+            <li>Suporte a sistemas ERP e PDV.</li>
+            <li>Consultas e manutenção em banco SQL.</li>
+            <li>Atendimento técnico e resolução de incidentes.</li>
+        </ul>
+
+        <h3>Técnico de Redes – Brisanet</h3>
+        <p><strong>Set/2023 – Nov/2024</strong></p>
+        <ul>
+            <li>Monitoramento de redes em larga escala.</li>
+            <li>Configuração e suporte a equipamentos de rede.</li>
+            <li>Resolução de incidentes de conectividade.</li>
+        </ul>
+
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades">
+        <h2>Habilidades Técnicas</h2>
+        <ul>
+            <li><span class="highlight">Linguagens:</span> Python, SQL</li>
+            <li><span class="highlight">Redes:</span> PPPoE, DHCP, NAT, VPN, Roteamento</li>
+            <li><span class="highlight">Sistemas:</span> Linux, Windows</li>
+            <li><span class="highlight">Banco de Dados:</span> PostgreSQL</li>
+            <li><span class="highlight">Ferramentas:</span> Wireshark, Zabbix, Grafana</li>
+            <li><span class="highlight">Infraestrutura:</span> Huawei, Cisco, MikroTik, OLTs</li>
+        </ul>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos">
+        <h2>Projetos</h2>
+        <ul>
+            <li>Script em Python para análise de logs PPPoE.</li>
+            <li>Automação de consultas PostgreSQL para suporte técnico.</li>
+            <li>Laboratório com Linux para simulação de redes e serviços.</li>
+        </ul>
+    </section>
+
+    <!-- Formação -->
+    <section id="formacao">
+        <h2>Formação e Certificações</h2>
+
+        <h3>Análise e Desenvolvimento de Sistemas</h3>
+        <p><strong>Cursando</strong></p>
+
+        <h3>Linux Foundation - Introduction to Linux (LFS101)</h3>
+        <p><strong>Concluído</strong></p>
+
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+        <h2>Contato</h2>
+        <p><strong>Email:</strong> gabriel_andre1@hotmail.com</p>
+        <p><strong>Telefone:</strong> (84) 99908-5945</p>
+        <a href="mailto:gabriel_andre1@hotmail.com">Enviar Email</a>
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2026 Gabriel André - Portfólio Profissional</p>
+</footer>
+
 </body>
 </html>
