@@ -2,80 +2,108 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Gabriel André | DevOps</title>
+    <title>Gabriel André | DevOps Engineer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="hero">
-    <div class="container">
-        <h1><span>Gabriel</span> André</h1>
-        <p class="subtitle">DevOps • Infraestrutura • Redes ISP • Automação Python</p>
+<div class="background"></div>
 
-        <div class="buttons">
-            <a href="https://github.com/" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/gabriel-andr%C3%A9-55b594a1/" target="_blank">LinkedIn</a>
-            <a href="cv.pdf" download class="cv">📄 Currículo</a>
-        </div>
+<header class="hero">
+    <h1>Gabriel André</h1>
+    <p class="typing"></p>
+
+    <div class="buttons">
+        <a href="https://github.com/">GitHub</a>
+        <a href="https://www.linkedin.com/in/gabriel-andr%C3%A9-55b594a1/">LinkedIn</a>
+        <a href="cv.pdf" download>Currículo</a>
     </div>
 </header>
 
-<section class="sobre">
-    <div class="container">
-        <h2>Sobre</h2>
-        <p>
-            Profissional de TI com experiência sólida em ambientes ISP, atuando com redes,
-            infraestrutura Linux e automação com Python. Experiência prática em troubleshooting,
-            VPNs, NAT, integração de sistemas e ambientes produtivos.
-        </p>
-    </div>
+<section>
+    <h2>Sobre</h2>
+    <p>
+        Profissional focado em automação de infraestrutura, redes ISP e ambientes Linux.
+        Experiência com troubleshooting avançado, APIs REST, VPNs, NAT e integração de sistemas.
+        Forte atuação em automação com Python aplicada a redes.
+    </p>
 </section>
 
-<section class="stack">
-    <div class="container">
-        <h2>Stack</h2>
+<section>
+    <h2>Stack</h2>
 
-        <div class="badges">
+    <div class="grid">
+        <div>
+            <h3>Infraestrutura</h3>
             <span>Linux</span>
-            <span>Python</span>
             <span>Docker</span>
-            <span>PostgreSQL</span>
+            <span>CI/CD</span>
+        </div>
+
+        <div>
+            <h3>Backend</h3>
+            <span>Python</span>
             <span>APIs REST</span>
-            <span>Git</span>
-            <span>Redes</span>
+            <span>PostgreSQL</span>
+        </div>
+
+        <div>
+            <h3>Redes</h3>
+            <span>VPN</span>
+            <span>NAT</span>
+            <span>Roteamento</span>
+            <span>ISP</span>
         </div>
     </div>
 </section>
 
-<section class="experiencia">
-    <div class="container">
-        <h2>Experiência</h2>
+<section>
+    <h2>Experiência</h2>
 
-        <div class="cards">
-
-            <div class="card">
-                <h3>TSMX</h3>
-                <p>
-                    Administração de servidores Linux, automação com Python,
-                    integração via APIs REST, CI/CD e suporte a ambientes críticos.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Brisanet</h3>
-                <p>
-                    Atuação em redes ISP com configuração de OLTs, VPNs,
-                    NAT, rotas e troubleshooting avançado.
-                </p>
-            </div>
-
-        </div>
+    <div class="card">
+        <h3>TSMX</h3>
+        <p>Automação com Python, integração via APIs, CI/CD e administração Linux.</p>
     </div>
+
+    <div class="card">
+        <h3>Brisanet</h3>
+        <p>Redes ISP, OLTs, VPNs, NAT e troubleshooting de alta complexidade.</p>
+    </div>
+</section>
+
+<section>
+    <h2>Projetos</h2>
+
+    <div class="card">
+        <h3>Automação de Redes com Python</h3>
+        <p>Scripts para configuração automática de dispositivos e coleta de dados.</p>
+    </div>
+
+    <div class="card">
+        <h3>Monitoramento de Infraestrutura</h3>
+        <p>Ferramenta para análise de disponibilidade e performance de serviços.</p>
+    </div>
+
 </section>
 
 <footer>
-    <p>© 2026 Gabriel André</p>
+    <p>© Gabriel André</p>
 </footer>
+
+<script>
+const text = "DevOps Engineer | Python | Network Automation";
+let i = 0;
+
+function typing() {
+    if (i < text.length) {
+        document.querySelector(".typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing, 50);
+    }
+}
+
+typing();
+</script>
 
 </body>
 </html>
