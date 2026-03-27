@@ -13,19 +13,14 @@ if (canvas) {
 
     let nodes = [];
 
-    function createNodes() {
-        nodes = [];
-        for (let i = 0; i < 40; i++) {
-            nodes.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 0.7,
-                vy: (Math.random() - 0.5) * 0.7
-            });
-        }
+    for (let i = 0; i < 50; i++) {
+        nodes.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 0.6,
+            vy: (Math.random() - 0.5) * 0.6
+        });
     }
-
-    createNodes();
 
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -47,7 +42,7 @@ if (canvas) {
                 let dy = node.y - nodes[j].y;
                 let dist = Math.sqrt(dx * dx + dy * dy);
 
-                if (dist < 100) {
+                if (dist < 110) {
                     ctx.beginPath();
                     ctx.moveTo(node.x, node.y);
                     ctx.lineTo(nodes[j].x, nodes[j].y);
