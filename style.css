@@ -1,40 +1,26 @@
-:root {
-    --bg: #0f172a;
-    --text: #e2e8f0;
-    --primary: #38bdf8;
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
 }
 
-body {
-    margin:0;
-    font-family: Arial;
-    background: var(--bg);
-    color: var(--text);
-    position: relative;
-    z-index: 1;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
 }
 
-header {
-    text-align:center;
-    padding:80px 20px;
+.card {
+    background: #1e293b;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
-.buttons a {
-    margin:10px;
-    padding:10px 20px;
-    border-radius:5px;
-    text-decoration:none;
-    font-weight:bold;
+.card:hover {
+    transform: translateY(-5px);
 }
 
-.github {background:#fff;color:#000;}
-.linkedin {background:#0A66C2;color:#fff;}
-.cv {background:#22c55e;color:#fff;}
-
-#networkCanvas {
-    position: fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index:-2;
+h2 {
+    color: #38bdf8;
 }
