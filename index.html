@@ -2,261 +2,160 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel André - Portfólio Profissional</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<title>Gabriel André | DevOps & Infra</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            color: #2d3436;
-        }
+<style>
+:root {
+    --bg: #f4f6f9;
+    --text: #2d3436;
+    --card: #fff;
+}
 
-        header {
-            background: linear-gradient(135deg, #2d3436, #0984e3);
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem;
-        }
+.dark {
+    --bg: #1e1e1e;
+    --text: #ecf0f1;
+    --card: #2c2c2c;
+}
 
-        header h1 {
-            font-size: 2.5rem;
-        }
+body {
+    font-family: Arial;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
+}
 
-        header p {
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
-        }
+header {
+    background: linear-gradient(135deg, #0984e3, #2d3436);
+    color: white;
+    text-align: center;
+    padding: 3rem;
+}
 
-        .buttons {
-            margin-top: 1rem;
-        }
+button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
-        .buttons a {
-            display: inline-block;
-            margin: 5px;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+nav {
+    text-align: center;
+    padding: 1rem;
+}
 
-        .github {
-            background: #fff;
-            color: #0984e3;
-        }
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        .linkedin {
-            background: #00b894;
-            color: #fff;
-        }
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 1rem;
+}
 
-        nav {
-            background: #fff;
-            text-align: center;
-            padding: 1rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
+section {
+    background: var(--card);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+}
 
-        nav a {
-            margin: 0 1rem;
-            text-decoration: none;
-            color: #0984e3;
-            font-weight: bold;
-        }
+.card {
+    padding: 1rem;
+    border-radius: 8px;
+    background: var(--card);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
 
-        .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 1rem;
-        }
-
-        section {
-            background: #fff;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        h2 {
-            color: #0984e3;
-            margin-bottom: 1rem;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        ul li {
-            margin: 0.5rem 0;
-        }
-
-        .highlight {
-            color: #d4a017;
-            font-weight: bold;
-        }
-
-        .projects {
-            display: grid;
-            gap: 15px;
-        }
-
-        .project-card {
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background: #2d3436;
-            color: #fff;
-        }
-    </style>
+.highlight {
+    color: #00b894;
+    font-weight: bold;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>Gabriel André Montenegro de Castro</h1>
-    <p>Analista de Suporte | Redes | Linux | Python | PostgreSQL</p>
+<h1>Gabriel André</h1>
+<p>DevOps | Redes | Linux | Python | Automação</p>
 
-    <div class="buttons">
-        <a href="https://github.com/gabrielandre1" target="_blank" class="github">GitHub</a>
-        <a href="www.linkedin.com/in/gabriel-andré-55b594a1" target="_blank" class="linkedin">LinkedIn</a>
-    </div>
+<a href="https://github.com/gabrielandre1" target="_blank">
+<button>GitHub</button>
+</a>
+
+<button onclick="toggleTheme()">🌙 Alternar Tema</button>
 </header>
 
 <nav>
-    <a href="#perfil">Perfil</a>
-    <a href="#stack">Stack</a>
-    <a href="#experiencia">Experiência</a>
-    <a href="#habilidades">Habilidades</a>
-    <a href="#projetos">Projetos</a>
-    <a href="#formacao">Formação</a>
-    <a href="#contato">Contato</a>
+<a href="#sobre">Sobre</a>
+<a href="#diferenciais">Diferenciais</a>
+<a href="#projetos">Projetos</a>
+<a href="#contato">Contato</a>
 </nav>
 
 <div class="container">
 
-    <section id="perfil">
-        <h2>Perfil Profissional</h2>
-        <p>
-            Profissional de TI com experiência em <span class="highlight">redes, sistemas e suporte técnico avançado</span>,
-            atuando em ambientes de provedores de internet. Conhecimento em
-            <span class="highlight">Linux, automação com Python, PostgreSQL e troubleshooting de redes</span>.
-            Focado em alta disponibilidade, automação e resolução eficiente de problemas.
-        </p>
-    </section>
+<section id="sobre">
+<h2>Sobre mim</h2>
+<p>
+Profissional de TI com experiência em <span class="highlight">infraestrutura, redes e automação</span>.
+Atuação com <span class="highlight">Linux, Python, APIs e troubleshooting avançado</span>,
+focado em alta disponibilidade e melhoria contínua.
+</p>
+</section>
 
-    <section id="stack">
-        <h2>⚙️ Stack Tecnológica</h2>
-        <p>
-            <span class="highlight">Python</span> |
-            <span class="highlight">Linux</span> |
-            <span class="highlight">PostgreSQL</span> |
-            <span class="highlight">Docker</span> |
-            <span class="highlight">Redes</span> |
-            <span class="highlight">APIs REST</span>
-        </p>
-    </section>
+<section id="diferenciais">
+<h2>🔥 Diferenciais</h2>
 
-    <section id="experiencia">
-        <h2>Experiência Profissional</h2>
+<div class="card">✔ Automação de processos com Python</div>
+<div class="card">✔ Experiência com ambientes de ISP</div>
+<div class="card">✔ Integração de sistemas via APIs</div>
+<div class="card">✔ Troubleshooting avançado em redes</div>
+<div class="card">✔ Conhecimento em Docker e DevOps</div>
 
-        <h3>Analista de Suporte Técnico – TSMX</h3>
-        <p><strong>Jun/2025 – Atualmente</strong></p>
-        <ul>
-            <li>Administração de servidores Linux e análise de logs</li>
-            <li>Monitoramento de redes (PPPoE, DHCP, NAT, VPN)</li>
-            <li>Configuração de equipamentos MikroTik, Huawei e Cisco</li>
-            <li>Integração de sistemas via APIs REST</li>
-            <li>Automação de processos com Python</li>
-            <li>Consultas e análise em PostgreSQL</li>
-        </ul>
+</section>
 
-        <h3>Analista de Sistemas – CTSI</h3>
-        <p><strong>Dez/2023 – Mai/2024</strong></p>
-        <ul>
-            <li>Suporte a sistemas ERP e banco de dados</li>
-            <li>Atendimento e resolução de incidentes</li>
-        </ul>
+<section id="projetos">
+<h2>🚀 Projetos</h2>
 
-        <h3>Técnico de Redes – Brisanet</h3>
-        <p><strong>Set/2023 – Nov/2024</strong></p>
-        <ul>
-            <li>Monitoramento e suporte em redes</li>
-            <li>Configuração de equipamentos</li>
-        </ul>
-    </section>
+<div class="card">
+<h3>DevOps Network Tools</h3>
+<p>Automação de redes com Python + Docker + APIs.</p>
+<a href="https://github.com/gabrielandre1/devops-network-tools">Ver projeto</a>
+</div>
 
-    <section id="habilidades">
-        <h2>Habilidades Técnicas</h2>
-        <ul>
-            <li><span class="highlight">Python, SQL</span></li>
-            <li><span class="highlight">Linux e Windows</span></li>
-            <li><span class="highlight">Redes: PPPoE, DHCP, NAT, VPN</span></li>
-            <li><span class="highlight">PostgreSQL</span></li>
-            <li><span class="highlight">APIs REST</span></li>
-            <li><span class="highlight">MikroTik, Huawei, Cisco</span></li>
-        </ul>
-    </section>
+<div class="card">
+<h3>Monitoramento de Rede</h3>
+<p>Script para análise de logs e disponibilidade.</p>
+</div>
 
-    <section id="projetos">
-        <h2>🚀 Projetos</h2>
+<div class="card">
+<h3>API Python</h3>
+<p>Integração de sistemas e validação de dados.</p>
+</div>
 
-        <div class="projects">
+</section>
 
-            <div class="project-card">
-                <h3>DevOps Network Tools</h3>
-                <p>Automação de redes com Python, integração com APIs e uso de Docker.</p>
-                <a href="https://github.com/gabrielandre1/devops-network-tools" target="_blank">Ver projeto</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Monitoramento PPPoE</h3>
-                <p>Script para análise de logs e detecção de falhas em autenticação.</p>
-            </div>
-
-            <div class="project-card">
-                <h3>API REST</h3>
-                <p>Integração de sistemas e validação de dados via API.</p>
-            </div>
-
-            <div class="project-card">
-                <h3>Laboratório Linux</h3>
-                <p>Ambiente para testes e troubleshooting de serviços de rede.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="formacao">
-        <h2>Formação</h2>
-        <p>Análise e Desenvolvimento de Sistemas (Cursando)</p>
-        <p>Linux Foundation - Introduction to Linux</p>
-    </section>
-
-    <section id="contato">
-        <h2>Contato</h2>
-        <p>Email: gabriel_andre1@hotmail.com</p>
-        <p>Telefone: (84) 99908-5945</p>
-    </section>
+<section id="contato">
+<h2>Contato</h2>
+<p>Email: gabriel_andre1@hotmail.com</p>
+</section>
 
 </div>
 
-<footer>
-    <p>© 2026 Gabriel André</p>
-</footer>
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("dark");
+}
+</script>
 
 </body>
 </html>
