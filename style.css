@@ -1,20 +1,51 @@
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #e2e8f0;
+    --primary: #38bdf8;
+}
+
+body {
+    margin:0;
+    font-family: Arial;
+    background: var(--bg);
+    color: var(--text);
+}
+
+header {
+    text-align:center;
+    padding:80px 20px;
+}
+
+.buttons a {
+    margin:10px;
+    padding:10px 20px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.github {background:#fff;color:#000;}
+.linkedin {background:#0A66C2;color:#fff;}
+.cv {background:#22c55e;color:#fff;}
+
 .container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap:15px;
 }
 
 .card {
-    background: #1e293b;
-    padding: 15px;
-    border-radius: 10px;
-    transition: 0.3s;
+    background: var(--card);
+    padding:20px;
+    border-radius:10px;
+    transition:0.3s;
 }
 
 .card:hover {
@@ -22,5 +53,14 @@
 }
 
 h2 {
-    color: #38bdf8;
+    color: var(--primary);
+}
+
+#networkCanvas {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-2;
 }
