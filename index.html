@@ -1,244 +1,62 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gabriel André | DevOps & Infraestrutura</title>
+<script>
+const canvas = document.getElementById("networkCanvas");
+const ctx = canvas.getContext("2d");
 
-<style>
-:root {
-    --bg: #0f172a;
-    --card: #1e293b;
-    --text: #e2e8f0;
-    --primary: #38bdf8;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let nodes = [];
+
+for (let i = 0; i < 50; i++) {
+    nodes.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 1,
+        vy: (Math.random() - 0.5) * 1
+    });
 }
 
-body {
-    margin:0;
-    font-family: Arial;
-    background: var(--bg);
-    color: var(--text);
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    nodes.forEach((node, i) => {
+        node.x += node.vx;
+        node.y += node.vy;
+
+        // bounce
+        if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
+        if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+
+        // draw node
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, 2, 0, Math.PI * 2);
+        ctx.fillStyle = "#38bdf8";
+        ctx.fill();
+
+        // connections
+        for (let j = i + 1; j < nodes.length; j++) {
+            let dx = node.x - nodes[j].x;
+            let dy = node.y - nodes[j].y;
+            let dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 120) {
+                ctx.beginPath();
+                ctx.moveTo(node.x, node.y);
+                ctx.lineTo(nodes[j].x, nodes[j].y);
+                ctx.strokeStyle = "rgba(56,189,248,0.2)";
+                ctx.stroke();
+            }
+        }
+    });
+
+    requestAnimationFrame(draw);
 }
 
-header {
-    text-align:center;
-    padding:60px 20px;
-}
+draw();
 
-header h1 {
-    font-size: 2.8rem;
-}
-
-header p {
-    color: #94a3b8;
-}
-
-.buttons a {
-    margin:10px;
-    padding:10px 20px;
-    border-radius:5px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.github {background:#fff;color:#000;}
-.linkedin {background:#0A66C2;color:#fff;}
-
-.container {
-    max-width:1100px;
-    margin:auto;
-    padding:20px;
-}
-
-section {
-    margin-bottom:40px;
-}
-
-h2 {
-    color: var(--primary);
-}
-
-.grid {
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap:20px;
-}
-
-.card {
-    background: var(--card);
-    padding:20px;
-    border-radius:10px;
-    transition:0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.highlight {
-    color: var(--primary);
-    font-weight:bold;
-}
-
-ul {
-    padding-left:15px;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<h1>Gabriel André Montenegro de Castro</h1>
-<p>DevOps | Infraestrutura | Redes ISP | Linux | Python | Automação</p>
-
-<div class="buttons">
-<a href="https://github.com/gabrielandre1" class="github">GitHub</a>
-<a href="https://www.linkedin.com/in/gabriel-andr%C3%A9-55b594a1/" class="linkedin">LinkedIn</a>
-</div>
-</header>
-
-<div class="container">
-
-<section>
-<h2>👨‍💻 Sobre</h2>
-<p>
-Profissional de TI com sólida experiência em ambientes de <span class="highlight">provedores de internet (ISP)</span>,
-atuando com <span class="highlight">infraestrutura, redes e automação</span>.
-Vivência prática em <span class="highlight">Linux, Python, PostgreSQL e integração via APIs REST</span>,
-com foco em alta disponibilidade, troubleshooting avançado e melhoria contínua de sistemas em produção.
-</p>
-</section>
-
-<section>
-<h2>⚙️ Stack Tecnológica</h2>
-<div class="grid">
-<div class="card">Linux (Administração e Logs)</div>
-<div class="card">Python (Automação)</div>
-<div class="card">PostgreSQL</div>
-<div class="card">Docker</div>
-<div class="card">APIs REST</div>
-<div class="card">Redes TCP/IP</div>
-</div>
-</section>
-
-<section>
-<h2>🌐 Ambientes e Tecnologias</h2>
-<div class="grid">
-<div class="card">MikroTik</div>
-<div class="card">Huawei</div>
-<div class="card">Cisco</div>
-<div class="card">Juniper</div>
-<div class="card">PPPoE / CGNAT</div>
-<div class="card">VPN / DHCP / NAT</div>
-<div class="card">Zabbix / Grafana</div>
-<div class="card">Wireshark</div>
-</div>
-</section>
-
-<section>
-<h2>💼 Experiência Profissional</h2>
-
-<div class="card">
-<h3>TSMX - Analista de Suporte Técnico</h3>
-<p><strong>2025 – Atual</strong></p>
-<ul>
-<li>Administração de servidores Linux em ambiente de produção;</li>
-<li>Análise de logs e troubleshooting de aplicações e serviços;</li>
-<li>Monitoramento e diagnóstico de redes (PPPoE, DHCP, NAT, VPN);</li>
-<li>Integração de sistemas via APIs REST;</li>
-<li>Automação de tarefas com Python;</li>
-<li>Consultas e análise de dados em PostgreSQL;</li>
-<li>Suporte a ambientes distribuídos de provedores de internet;</li>
-<li>Configuração e troubleshooting em equipamentos MikroTik, Huawei, Cisco e OLTs;</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>CTSI - Analista de Sistemas</h3>
-<p><strong>2023 – 2024</strong></p>
-<ul>
-<li>Suporte a sistemas ERP e PDV;</li>
-<li>Consultas e manutenção em banco de dados SQL;</li>
-<li>Atendimento técnico e resolução de incidentes;</li>
-<li>Suporte a integrações e customizações de sistemas;</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Brisanet - Analista de Redes</h3>
-<p><strong>2023 – 2024</strong></p>
-<ul>
-<li>Monitoramento de infraestrutura de rede em larga escala;</li>
-<li>Configuração de roteadores e switches;</li>
-<li>Diagnóstico e resolução de falhas de conectividade;</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Experiência Anterior - Infraestrutura e Suporte</h3>
-<ul>
-<li>Administração de redes e servidores Windows/Linux;</li>
-<li>Manutenção de hardware e suporte a usuários;</li>
-<li>Gestão de ativos de TI e segurança de dados;</li>
-</ul>
-</div>
-
-</section>
-
-<section>
-<h2>🚀 Projetos</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>DevOps Network Tools</h3>
-<p>Automação de redes com Python, integração com APIs e uso de Docker.</p>
-<a href="https://github.com/gabrielandre1/devops-network-tools">Ver projeto</a>
-</div>
-
-<div class="card">
-<h3>Monitoramento de Rede</h3>
-<p>Script para análise de logs e disponibilidade de serviços.</p>
-</div>
-
-<div class="card">
-<h3>Integração API REST</h3>
-<p>Projeto de comunicação entre sistemas distribuídos.</p>
-</div>
-
-<div class="card">
-<h3>Laboratório Linux</h3>
-<p>Simulação de ambientes reais para troubleshooting.</p>
-</div>
-
-</div>
-</section>
-
-<section>
-<h2>🎓 Formação e Certificações</h2>
-
-<div class="card">
-<p>Análise e Desenvolvimento de Sistemas (Cursando)</p>
-<p>Sistemas de Informação (Incompleto)</p>
-</div>
-
-<div class="card">
-<p>Linux Foundation - Introduction to Linux (LFS101)</p>
-<p>Análise de Dados com Python</p>
-<p>Administrador de Redes - SENAC</p>
-<p>Programação Java e SQL - SENAC</p>
-</div>
-
-</section>
-
-<section>
-<h2>📫 Contato</h2>
-<p>Email: gabriel_andre1@hotmail.com</p>
-<p>Telefone: (84) 99908-5945</p>
-</section>
-
-</div>
-
-</body>
-</html>
+// resize responsivo
+window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+</script>
