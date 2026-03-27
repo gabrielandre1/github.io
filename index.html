@@ -1,73 +1,120 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriel André - Portfólio Profissional</title>
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f6f9;
             color: #2d3436;
         }
+
         header {
             background: linear-gradient(135deg, #2d3436, #0984e3);
             color: white;
             text-align: center;
             padding: 3rem 1rem;
         }
+
         header h1 {
             font-size: 2.5rem;
         }
+
         header p {
             font-size: 1.2rem;
             margin-top: 0.5rem;
         }
+
+        .buttons {
+            margin-top: 1rem;
+        }
+
+        .buttons a {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .github {
+            background: #fff;
+            color: #0984e3;
+        }
+
+        .linkedin {
+            background: #00b894;
+            color: #fff;
+        }
+
         nav {
             background: #fff;
             text-align: center;
             padding: 1rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
         nav a {
             margin: 0 1rem;
             text-decoration: none;
             color: #0984e3;
             font-weight: bold;
         }
+
         .container {
             max-width: 1000px;
             margin: 2rem auto;
             padding: 1rem;
         }
+
         section {
             background: #fff;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
             border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
         }
+
         h2 {
             color: #0984e3;
             margin-bottom: 1rem;
         }
-       
+
         ul {
             list-style: none;
         }
+
         ul li {
             margin: 0.5rem 0;
         }
+
         .highlight {
             color: #d4a017;
             font-weight: bold;
         }
+
+        .projects {
+            display: grid;
+            gap: 15px;
+        }
+
+        .project-card {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
         footer {
             text-align: center;
             padding: 1rem;
@@ -76,15 +123,22 @@
         }
     </style>
 </head>
+
 <body>
 
 <header>
     <h1>Gabriel André Montenegro de Castro</h1>
-    <p>Analista de Suporte Técnico | Redes | Linux | Python | PostgreSQL</p>
+    <p>Analista de Suporte | Redes | Linux | Python | PostgreSQL</p>
+
+    <div class="buttons">
+        <a href="https://github.com/gabrielandre1" target="_blank" class="github">GitHub</a>
+        <a href="#" target="_blank" class="linkedin">LinkedIn</a>
+    </div>
 </header>
 
 <nav>
     <a href="#perfil">Perfil</a>
+    <a href="#stack">Stack</a>
     <a href="#experiencia">Experiência</a>
     <a href="#habilidades">Habilidades</a>
     <a href="#projetos">Projetos</a>
@@ -94,119 +148,114 @@
 
 <div class="container">
 
-    <!-- Perfil -->
     <section id="perfil">
         <h2>Perfil Profissional</h2>
         <p>
-            Profissional de TI com experiência em <span class="highlight">redes, sistemas e suporte técnico avançado</span>, 
-            atuando em ambientes de provedores de internet. Possuo conhecimento em 
-            <span class="highlight">Linux, automação com Python, banco de dados PostgreSQL e troubleshooting de redes</span>. 
-            Focado em resolução de problemas, alta disponibilidade e melhoria contínua de processos.
+            Profissional de TI com experiência em <span class="highlight">redes, sistemas e suporte técnico avançado</span>,
+            atuando em ambientes de provedores de internet. Conhecimento em
+            <span class="highlight">Linux, automação com Python, PostgreSQL e troubleshooting de redes</span>.
+            Focado em alta disponibilidade, automação e resolução eficiente de problemas.
         </p>
     </section>
 
-    <!-- Experiência -->
+    <section id="stack">
+        <h2>⚙️ Stack Tecnológica</h2>
+        <p>
+            <span class="highlight">Python</span> |
+            <span class="highlight">Linux</span> |
+            <span class="highlight">PostgreSQL</span> |
+            <span class="highlight">Docker</span> |
+            <span class="highlight">Redes</span> |
+            <span class="highlight">APIs REST</span>
+        </p>
+    </section>
+
     <section id="experiencia">
         <h2>Experiência Profissional</h2>
 
         <h3>Analista de Suporte Técnico – TSMX</h3>
         <p><strong>Jun/2025 – Atualmente</strong></p>
         <ul>
-            <li>Suporte técnico em ambientes de redes e sistemas para provedores de internet.</li>
-            <li>Acesso a servidores Linux e equipamentos de rede via SSH e Telnet.</li>
-            <li>Configuração e troubleshooting em concentradores Huawei, Cisco, Juniper e OLTs.</li>
-            <li>Monitoramento de sessões PPPoE, autenticação e accounting.</li>
-            <li>Atuação com CGNAT, NAT, DHCP, VPN e roteamento.</li>
-            <li>Integração de sistemas via APIs REST (consumo de endpoints).</li>
-            <li>Automação de rotinas com scripts em Python.</li>
-            <li>Consultas e análise em banco PostgreSQL.</li>
-            <li>Análise de logs e diagnóstico de falhas em ambientes distribuídos.</li>
+            <li>Administração de servidores Linux e análise de logs</li>
+            <li>Monitoramento de redes (PPPoE, DHCP, NAT, VPN)</li>
+            <li>Configuração de equipamentos MikroTik, Huawei e Cisco</li>
+            <li>Integração de sistemas via APIs REST</li>
+            <li>Automação de processos com Python</li>
+            <li>Consultas e análise em PostgreSQL</li>
         </ul>
 
         <h3>Analista de Sistemas – CTSI</h3>
         <p><strong>Dez/2023 – Mai/2024</strong></p>
         <ul>
-            <li>Suporte a sistemas ERP e PDV.</li>
-            <li>Consultas e manutenção em banco SQL.</li>
-            <li>Atendimento técnico e resolução de incidentes.</li>
+            <li>Suporte a sistemas ERP e banco de dados</li>
+            <li>Atendimento e resolução de incidentes</li>
         </ul>
 
         <h3>Técnico de Redes – Brisanet</h3>
         <p><strong>Set/2023 – Nov/2024</strong></p>
         <ul>
-            <li>Monitoramento de redes em larga escala.</li>
-            <li>Configuração e suporte a equipamentos de rede.</li>
-            <li>Resolução de incidentes de conectividade.</li>
+            <li>Monitoramento e suporte em redes</li>
+            <li>Configuração de equipamentos</li>
         </ul>
-
     </section>
 
-    <!-- Habilidades -->
     <section id="habilidades">
         <h2>Habilidades Técnicas</h2>
         <ul>
-            <li><span class="highlight">Linguagens:</span> Python, SQL</li>
-            <li><span class="highlight">Redes:</span> PPPoE, CGNAT, DHCP, NAT, VPN, Roteamento</li>
-            <li><span class="highlight">Protocolos:</span> TCP/IP, SSH, Telnet</li>
-            <li><span class="highlight">Sistemas:</span> Linux (administração), Windows</li>
-            <li><span class="highlight">Banco de Dados:</span> PostgreSQL</li>
-            <li><span class="highlight">APIs:</span> Integração REST, consumo de endpoints</li>
-            <li><span class="highlight">Infraestrutura:</span> Huawei, Cisco, Juniper, MikroTik, OLTs</li>
-            <li><span class="highlight">Ferramentas:</span> Wireshark, Zabbix, Grafana</li>
+            <li><span class="highlight">Python, SQL</span></li>
+            <li><span class="highlight">Linux e Windows</span></li>
+            <li><span class="highlight">Redes: PPPoE, DHCP, NAT, VPN</span></li>
+            <li><span class="highlight">PostgreSQL</span></li>
+            <li><span class="highlight">APIs REST</span></li>
+            <li><span class="highlight">MikroTik, Huawei, Cisco</span></li>
         </ul>
     </section>
 
-    <!-- Projetos -->
-   <section id="projetos">
+    <section id="projetos">
         <h2>🚀 Projetos</h2>
-        <ul>
-            <li>
-                <strong>Ferramentas de Rede DevOps</strong><br>
-                Automação com Python, pipelines CI/CD e containerização com Docker.<br>
-                <a href="https://github.com/gabrielandre1/devops-network-tools" target="_blank">
-                Ver no GitHub
-                </a>
-            </li>
 
-            <li>
-                Script em Python para automação de consultas e análise de logs de autenticação PPPoE.
-            </li>
-            <li>
-                Integração com API REST para consulta e validação de dados de clientes.
-            </li>
-            <li>
-                Laboratório com Linux para simulação de serviços de rede e troubleshooting.
-            </li>
-            <li>
-                Simulação de ambiente CGNAT para estudo de NAT em larga escala.
-            </li>
-        </ul>
+        <div class="projects">
+
+            <div class="project-card">
+                <h3>DevOps Network Tools</h3>
+                <p>Automação de redes com Python, integração com APIs e uso de Docker.</p>
+                <a href="https://github.com/gabrielandre1/devops-network-tools" target="_blank">Ver projeto</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Monitoramento PPPoE</h3>
+                <p>Script para análise de logs e detecção de falhas em autenticação.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>API REST</h3>
+                <p>Integração de sistemas e validação de dados via API.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Laboratório Linux</h3>
+                <p>Ambiente para testes e troubleshooting de serviços de rede.</p>
+            </div>
+
+        </div>
     </section>
 
-    <!-- Formação -->
     <section id="formacao">
-        <h2>Formação e Certificações</h2>
-
-        <h3>Análise e Desenvolvimento de Sistemas</h3>
-        <p><strong>Cursando</strong></p>
-
-        <h3>Linux Foundation - Introduction to Linux (LFS101)</h3>
-        <p><strong>Concluído</strong></p>
-
+        <h2>Formação</h2>
+        <p>Análise e Desenvolvimento de Sistemas (Cursando)</p>
+        <p>Linux Foundation - Introduction to Linux</p>
     </section>
 
-    <!-- Contato -->
     <section id="contato">
         <h2>Contato</h2>
-        <p><strong>Email:</strong> gabriel_andre1@hotmail.com</p>
-        <p><strong>Telefone:</strong> (84) 99908-5945</p>
-        <a href="mailto:gabriel_andre1@hotmail.com">Enviar Email</a>
+        <p>Email: gabriel_andre1@hotmail.com</p>
+        <p>Telefone: (84) 99908-5945</p>
     </section>
 
 </div>
 
 <footer>
-    <p>© 2026 Gabriel André - Portfólio Profissional</p>
+    <p>© 2026 Gabriel André</p>
 </footer>
 
 </body>
