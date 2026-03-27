@@ -1,82 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Gabriel André | DevOps & Infra</title>
+<title>Gabriel André | DevOps & Infraestrutura</title>
 
 <style>
 :root {
-    --bg: #f4f6f9;
-    --text: #2d3436;
-    --card: #fff;
-}
-
-.dark {
-    --bg: #1e1e1e;
-    --text: #ecf0f1;
-    --card: #2c2c2c;
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #e2e8f0;
+    --primary: #38bdf8;
 }
 
 body {
+    margin:0;
     font-family: Arial;
     background: var(--bg);
     color: var(--text);
-    transition: 0.3s;
 }
 
 header {
-    background: linear-gradient(135deg, #0984e3, #2d3436);
-    color: white;
-    text-align: center;
-    padding: 3rem;
+    text-align:center;
+    padding:60px 20px;
 }
 
-button {
-    margin-top: 10px;
-    padding: 8px 15px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+header h1 {
+    font-size: 2.8rem;
 }
 
-nav {
-    text-align: center;
-    padding: 1rem;
+header p {
+    color: #94a3b8;
 }
 
-nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: bold;
+.buttons a {
+    margin:10px;
+    padding:10px 20px;
+    border-radius:5px;
+    text-decoration:none;
+    font-weight:bold;
 }
+
+.github {background:#fff;color:#000;}
+.linkedin {background:#0A66C2;color:#fff;}
 
 .container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 1rem;
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
 }
 
 section {
-    background: var(--card);
-    padding: 1.5rem;
-    margin: 1rem 0;
-    border-radius: 8px;
+    margin-bottom:40px;
+}
+
+h2 {
+    color: var(--primary);
+}
+
+.grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap:20px;
 }
 
 .card {
-    padding: 1rem;
-    border-radius: 8px;
     background: var(--card);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    margin-bottom: 10px;
+    padding:20px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .highlight {
-    color: #00b894;
-    font-weight: bold;
+    color: var(--primary);
+    font-weight:bold;
 }
 </style>
 </head>
@@ -85,46 +86,74 @@ section {
 
 <header>
 <h1>Gabriel André</h1>
-<p>DevOps | Redes | Linux | Python | Automação</p>
+<p>DevOps | Redes ISP | Linux | Python | Automação</p>
 
-<a href="https://github.com/gabrielandre1" target="_blank">
-<button>GitHub</button>
-</a>
-
-<button onclick="toggleTheme()">🌙 Alternar Tema</button>
+<div class="buttons">
+<a href="https://github.com/gabrielandre1" class="github">GitHub</a>
+<a href="https://www.linkedin.com/in/gabriel-andr%C3%A9-55b594a1/" class="linkedin">LinkedIn</a>
+</div>
 </header>
-
-<nav>
-<a href="#sobre">Sobre</a>
-<a href="#diferenciais">Diferenciais</a>
-<a href="#projetos">Projetos</a>
-<a href="#contato">Contato</a>
-</nav>
 
 <div class="container">
 
-<section id="sobre">
-<h2>Sobre mim</h2>
+<section>
+<h2>👨‍💻 Sobre</h2>
 <p>
-Profissional de TI com experiência em <span class="highlight">infraestrutura, redes e automação</span>.
-Atuação com <span class="highlight">Linux, Python, APIs e troubleshooting avançado</span>,
-focado em alta disponibilidade e melhoria contínua.
+Profissional de TI com atuação em ambientes de <span class="highlight">provedores de internet (ISP)</span>,
+experiência em <span class="highlight">redes, infraestrutura e automação</span>.
+Trabalho com <span class="highlight">Linux, Python, APIs REST e PostgreSQL</span>,
+focado em alta disponibilidade, troubleshooting e otimização de sistemas.
 </p>
 </section>
 
-<section id="diferenciais">
-<h2>🔥 Diferenciais</h2>
+<section>
+<h2>⚙️ Stack Tecnológica</h2>
+<div class="grid">
+<div class="card">Linux</div>
+<div class="card">Python</div>
+<div class="card">PostgreSQL</div>
+<div class="card">Docker</div>
+<div class="card">APIs REST</div>
+<div class="card">Redes TCP/IP</div>
+</div>
+</section>
 
-<div class="card">✔ Automação de processos com Python</div>
-<div class="card">✔ Experiência com ambientes de ISP</div>
-<div class="card">✔ Integração de sistemas via APIs</div>
-<div class="card">✔ Troubleshooting avançado em redes</div>
-<div class="card">✔ Conhecimento em Docker e DevOps</div>
+<section>
+<h2>🌐 Ambientes e Tecnologias</h2>
+<div class="grid">
+<div class="card">MikroTik</div>
+<div class="card">Huawei</div>
+<div class="card">Cisco</div>
+<div class="card">PPPoE / CGNAT</div>
+<div class="card">VPN / DHCP / NAT</div>
+<div class="card">Zabbix / Grafana</div>
+</div>
+</section>
+
+<section>
+<h2>💼 Experiência</h2>
+
+<div class="card">
+<h3>TSMX - Analista de Suporte</h3>
+<p>
+Administração de servidores Linux, troubleshooting de redes (PPPoE, NAT, VPN),
+integração via APIs REST, automação com Python e análise em PostgreSQL.
+</p>
+</div>
+
+<div class="card">
+<h3>Brisanet - Redes</h3>
+<p>
+Monitoramento de infraestrutura de rede e resolução de incidentes em larga escala.
+</p>
+</div>
 
 </section>
 
-<section id="projetos">
+<section>
 <h2>🚀 Projetos</h2>
+
+<div class="grid">
 
 <div class="card">
 <h3>DevOps Network Tools</h3>
@@ -134,28 +163,23 @@ focado em alta disponibilidade e melhoria contínua.
 
 <div class="card">
 <h3>Monitoramento de Rede</h3>
-<p>Script para análise de logs e disponibilidade.</p>
+<p>Script de análise de logs e disponibilidade.</p>
 </div>
 
 <div class="card">
 <h3>API Python</h3>
-<p>Integração de sistemas e validação de dados.</p>
+<p>Integração entre sistemas via REST.</p>
 </div>
 
+</div>
 </section>
 
-<section id="contato">
-<h2>Contato</h2>
+<section>
+<h2>📫 Contato</h2>
 <p>Email: gabriel_andre1@hotmail.com</p>
 </section>
 
 </div>
-
-<script>
-function toggleTheme() {
-    document.body.classList.toggle("dark");
-}
-</script>
 
 </body>
 </html>
